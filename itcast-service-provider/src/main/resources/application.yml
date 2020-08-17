@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql:///mybatis
+    username: root
+    password: root
+  application:
+    name: service-provider # 将来会作为微服务的名称。
+mybatis:
+#  扫描的包
+  type-aliases-package: cn.itcast.service.pojo
+#  configuration:
+#      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+eureka:
+  client:
+     service-url:
+        defaultZone: http://localhost:10086/eureka

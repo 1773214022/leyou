@@ -1,0 +1,21 @@
+server:
+  port: 80
+spring:
+  application:
+    name: service-consumer
+eureka:
+  client:
+    #    register-with-eureka: false
+    #    fetch-registry: false
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMillisecond: 6000 # 设置hystrix的超时时间为6000ms
+feign:
+  hystrix:
+    enabled: true
